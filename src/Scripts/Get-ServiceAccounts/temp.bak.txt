@@ -1,3 +1,0 @@
-6021,[GTS] MySql Account
-6043,[GTS] SQL Local Account (90 day expiry)
-6044,[GTS] SQL Local Account (No Expiry)
