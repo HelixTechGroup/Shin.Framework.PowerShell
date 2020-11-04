@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6311e712-acaa-41d4-8632-e000903f4482}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MyApplication</RootNamespace>
+    <AssemblyName>MyApplication</AssemblyName>
+    <Name>Shin.Framework.GLB</Name>
+    <ProjectHome />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Shin.Framework.GLB.psd1" />
+    <Compile Include="Shin.Framework.GLB.psm1" />
+    <Compile Include="Shin.Framework.GLB.tests.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shin.Framework.Data\Shin.Framework.Data.pssproj">
+      <Name>Shin.Framework.Data</Name>
+      <Project>{3208c257-b0ef-4241-b993-fbc7ccf46208}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Deloitte.Platform.Common\Deloitte.Platform.Common.pssproj">
+      <Name>Deloitte.Platform.Common</Name>
+      <Project>{6cafc0c6-a428-4d30-a9f9-700e829fea51}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <Name>System.Data</Name>
+      <AssemblyName>System.Data.dll</AssemblyName>
+      <HintPath>\Windows\Microsoft.NET\Framework\v2.0.50727\System.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="Build" />
+</Project>
