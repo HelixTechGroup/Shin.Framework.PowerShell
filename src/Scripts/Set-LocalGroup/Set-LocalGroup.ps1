@@ -3,7 +3,7 @@
 #
 #Requires -Version 3.0
 
-#using module Deloitte.Platform.Common;
+#using module Shin.Framework.Common;
 
 Param(
 [Parameter(Mandatory=$True,Position=1)]

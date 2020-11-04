@@ -1,5 +1,5 @@
 ---
-external help file: Deloitte.GTS.CTO.Security.psm1-help.xml
+external help file: Shin.Framework.Security.psm1-help.xml
 online version: 
 schema: 2.0.0
 ---

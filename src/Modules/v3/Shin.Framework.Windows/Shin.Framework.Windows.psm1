@@ -1,5 +1,5 @@
 #
-# Deloitte.GTS.CTO.Windows.psm1
+# Shin.Framework.Windows.psm1
 #
 
 #using namespace System.Management.Automation.Runspaces;

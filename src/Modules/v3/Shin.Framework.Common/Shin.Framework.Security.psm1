@@ -1,8 +1,8 @@
 #
-# Deloitte.GTS.CTO.Security.psm1
+# Shin.Framework.Security.psm1
 #
 
-#  .ExternalHelp Deloitte.GTS.CTO.Security.psm1-help.xml
+#  .ExternalHelp Shin.Framework.Security.psm1-help.xml
 function Get-SecurePassword([Parameter(Mandatory=$true)][string]$password, [string]$key = $null) {
 	if ([string]::IsNullOrWhiteSpace($key)) {
 		return ConvertTo-SecureString $password

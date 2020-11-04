@@ -19,53 +19,13 @@ function Write-Output($message) {
 	$message | Out-File $outFile -Append
 }
 
-function Get-GlbInfo([string]$appName) {
-	$appServers = @();
-	$contacts = @();
-
-	#GLB
-	try {		
-		$contacts = Get-GlbApplicationContacts $appName
-		if ($contacts -ne $null) {
-			$appId = $contacts."App GUID";
-		} else {
-			Write-LogWarn "Could not find Application in GLB: $($appName)"
-			Write-Output "$($appName) - Does not exist in GLB"
-
-			return;
-		}			
-	} catch {
-		$message = "Could not get AppId(GLBID) for Application: $($appName)";	
-		Write-LogException $message $_.Exception
-
-		return;
-	}
-
-	try {
-		$appServers = Get-GlbApplicationServers $appName
-		if ($appServers -ne $null) {
-			$servers = $appServers;
-		} else {
-			Write-LogWarn "Could not find Application Assets in GLB: $($appName)"
-			Write-Output "`tCould not find Application Assets in GLB"
-		}			
-	} catch {
-		$message = "Could not get Assets for Application: $($appName)";	
-		Write-LogException $message $_.Exception
-
-		return;
-	}
-	
-	return @{'Id'=$appId; 'Servers'=$servers}
-}
-
-function Get-PcsAppUsers([string]$appId) {
+function Get-SecretServerAppUsers([string]$appId) {
 	$appUsers = @();
 
 	try {
-		$appFolders = Search-PcsFolders $appId	
+		$appFolders = Search-SecretServerFolders $appId	
 	} catch {
-		$message = "Could not get Pcs folder for Application: $($app.Name)";	
+		$message = "Could not get SecretServer folder for Application: $($app.Name)";	
 		Write-LogException $message $_.Exception
 
 		return;
@@ -73,9 +33,9 @@ function Get-PcsAppUsers([string]$appId) {
 
 	if ($appFolders) {
 		foreach ($folder in $appFolders) {
-			$secrets = (Get-PcsFolderSecrets $folder.Id -includeSubFolders) | Where-Object { $_.TypeId -in $templates.Id };
+			$secrets = (Get-SecretServerFolderSecrets $folder.Id -includeSubFolders) | Where-Object { $_.TypeId -in $templates.Id };
 			foreach($summary in $secrets) {
-				$secret = Get-PcsSecret $summary.Id
+				$secret = Get-SecretServerSecret $summary.Id
 				$username = $secret.Username	
 				if($username -notlike "*\*") {
 					$secretDomain = $secret.Domain
@@ -92,8 +52,8 @@ function Get-PcsAppUsers([string]$appId) {
 			}		
 		}
 	} else {
-		Write-LogWarn "Could not find Application in PCS: $($app.Name) - $appId"
-		Write-Output "`tCould not find Application in PCS"
+		Write-LogWarn "Could not find Application in SecretServer: $($app.Name) - $appId"
+		Write-Output "`tCould not find Application in SecretServer"
 	}
 
 	return $appUsers;

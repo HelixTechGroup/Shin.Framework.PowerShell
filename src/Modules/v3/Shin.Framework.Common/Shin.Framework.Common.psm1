@@ -1,5 +1,5 @@
 #
-# Deloitte.GTS.CTO.Common.psm1
+# Shin.Framework.Common.psm1
 #
 
 function Get-ScriptDirectory() {

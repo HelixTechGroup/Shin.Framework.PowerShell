@@ -1,5 +1,5 @@
 #
-# Deloitte.GTS.CTO.Threading.psm1
+# Shin.Framework.Threading.psm1
 #
 
 Export-ModuleMember -Function *-*

@@ -1,0 +1,87 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9BD7D700-094E-4C5C-A426-2ABADEE03CCA}"
+EndProject
+Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "Update-Repos", "src\Scripts\Update-Repos\Update-Repos.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
+EndProject
+Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "Set-LocalGroup", "src\Scripts\Set-LocalGroup\Set-LocalGroup.pssproj", "{FE0E37F4-EFBA-4B11-94B0-183EBA074F37}"
+EndProject
+Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "Get-ServiceAccounts", "src\Scripts\Get-ServiceAccounts\Get-ServiceAccounts.pssproj", "{F096B32F-4585-4F45-AB4C-01EDB2242871}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{8F927F31-87F5-48C6-996A-AA30E9922550}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v5", "v5", "{2368DEBD-D063-4A13-A35A-E1F16E084E6B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v3", "v3", "{3C96E73A-8ABF-46AF-87D5-7F777FA553CA}"
+EndProject
+Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "Shin.Framework", "src\Modules\v5\Shin.Framework.Common\Shin.Framework.pssproj", "{14D93633-0645-4587-85DF-F34109002310}"
+EndProject
+Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "Shin.Framework.Windows", "src\Modules\v3\Shin.Framework.Windows\Shin.Framework.Windows.pssproj", "{D61A6D7E-5541-47D4-A5CA-95C6AE6CC3EA}"
+EndProject
+Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "Shin.Framework.Data", "src\Modules\v3\Shin.Framework.Data\Shin.Framework.Data.pssproj", "{3208C257-B0EF-4241-B993-FBC7CCF46208}"
+EndProject
+Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "Shin.Framework.Common", "src\Modules\v3\Shin.Framework.Common\Shin.Framework.Common.pssproj", "{E286E2B6-279D-483B-ACF9-407E9F84464C}"
+EndProject
+Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "Shin.Framework.SecretServer", "src\Modules\v3\Shin.Framework.SecretServer\Shin.Framework.SecretServer.pssproj", "{AFA955D0-4A17-4862-A965-376B7BE2139F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE0E37F4-EFBA-4B11-94B0-183EBA074F37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE0E37F4-EFBA-4B11-94B0-183EBA074F37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE0E37F4-EFBA-4B11-94B0-183EBA074F37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE0E37F4-EFBA-4B11-94B0-183EBA074F37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F096B32F-4585-4F45-AB4C-01EDB2242871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F096B32F-4585-4F45-AB4C-01EDB2242871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F096B32F-4585-4F45-AB4C-01EDB2242871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F096B32F-4585-4F45-AB4C-01EDB2242871}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14D93633-0645-4587-85DF-F34109002310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14D93633-0645-4587-85DF-F34109002310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14D93633-0645-4587-85DF-F34109002310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14D93633-0645-4587-85DF-F34109002310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D61A6D7E-5541-47D4-A5CA-95C6AE6CC3EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D61A6D7E-5541-47D4-A5CA-95C6AE6CC3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D61A6D7E-5541-47D4-A5CA-95C6AE6CC3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D61A6D7E-5541-47D4-A5CA-95C6AE6CC3EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3208C257-B0EF-4241-B993-FBC7CCF46208}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3208C257-B0EF-4241-B993-FBC7CCF46208}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3208C257-B0EF-4241-B993-FBC7CCF46208}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3208C257-B0EF-4241-B993-FBC7CCF46208}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E286E2B6-279D-483B-ACF9-407E9F84464C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E286E2B6-279D-483B-ACF9-407E9F84464C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E286E2B6-279D-483B-ACF9-407E9F84464C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E286E2B6-279D-483B-ACF9-407E9F84464C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFA955D0-4A17-4862-A965-376B7BE2139F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA955D0-4A17-4862-A965-376B7BE2139F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFA955D0-4A17-4862-A965-376B7BE2139F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA955D0-4A17-4862-A965-376B7BE2139F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51} = {9BD7D700-094E-4C5C-A426-2ABADEE03CCA}
+		{FE0E37F4-EFBA-4B11-94B0-183EBA074F37} = {9BD7D700-094E-4C5C-A426-2ABADEE03CCA}
+		{F096B32F-4585-4F45-AB4C-01EDB2242871} = {9BD7D700-094E-4C5C-A426-2ABADEE03CCA}
+		{2368DEBD-D063-4A13-A35A-E1F16E084E6B} = {8F927F31-87F5-48C6-996A-AA30E9922550}
+		{3C96E73A-8ABF-46AF-87D5-7F777FA553CA} = {8F927F31-87F5-48C6-996A-AA30E9922550}
+		{14D93633-0645-4587-85DF-F34109002310} = {2368DEBD-D063-4A13-A35A-E1F16E084E6B}
+		{D61A6D7E-5541-47D4-A5CA-95C6AE6CC3EA} = {3C96E73A-8ABF-46AF-87D5-7F777FA553CA}
+		{3208C257-B0EF-4241-B993-FBC7CCF46208} = {3C96E73A-8ABF-46AF-87D5-7F777FA553CA}
+		{E286E2B6-279D-483B-ACF9-407E9F84464C} = {3C96E73A-8ABF-46AF-87D5-7F777FA553CA}
+		{AFA955D0-4A17-4862-A965-376B7BE2139F} = {3C96E73A-8ABF-46AF-87D5-7F777FA553CA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C669E4D-CA75-4E79-B415-3970F7FB29CB}
+	EndGlobalSection
+EndGlobal

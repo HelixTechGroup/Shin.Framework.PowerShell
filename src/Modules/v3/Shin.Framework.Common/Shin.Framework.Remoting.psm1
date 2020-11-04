@@ -1,5 +1,5 @@
 #
-# Deloitte.GTS.CTO.Remoting.psm1
+# Shin.Framework.Remoting.psm1
 #
 
 function Test-Server([string]$server, [PSCredential]$credentials, [switch]$quiet) {
@@ -124,26 +124,26 @@ function Invoke-RemoteCommand([string]$serverName, [string]$functionName, [objec
 }
 
 function Clear-RemoteSessionCache() {
-	if(!(Test-Path Variable:\Deloitte.GTS.CTO.RemoteSessionCache)) {
+	if(!(Test-Path Variable:\Shin.Framework.RemoteSessionCache)) {
 		return;
 	}
 
-	$cache = ${GLOBAL:Deloitte.GTS.CTO.RemoteSessionCache};
+	$cache = ${GLOBAL:Shin.Framework.RemoteSessionCache};
 	foreach ($s in $cache.Values) {
 		Remove-PSSession $s.Id
 		$s = $null
 	}
 
-	${GLOBAL:Deloitte.GTS.CTO.RemoteSessionCache} = @{}
+	${GLOBAL:Shin.Framework.RemoteSessionCache} = @{}
 }
 
 function GetRemoteSession([string]$serverName, [PSCredential]$credentials, [bool]$adminSession) {
 	$session = $null;
-	if(!(Test-Path Variable:\Deloitte.GTS.CTO.RemoteSessionCache)) {
-		${GLOBAL:Deloitte.GTS.CTO.RemoteSessionCache} = @{}
+	if(!(Test-Path Variable:\Shin.Framework.RemoteSessionCache)) {
+		${GLOBAL:Shin.Framework.RemoteSessionCache} = @{}
 	}
  
-	$session = ${GLOBAL:Deloitte.GTS.CTO.RemoteSessionCache}["$serverName"]
+	$session = ${GLOBAL:Shin.Framework.RemoteSessionCache}["$serverName"]
 	if(!$session) {
 		if ($adminSession) {
 			$session = Get-AdminPSSession $serverName $credentials
@@ -151,7 +151,7 @@ function GetRemoteSession([string]$serverName, [PSCredential]$credentials, [bool
 			$session = New-PSSession $serverName -Credential $credentials
 		}
 
-		${GLOBAL:Deloitte.GTS.CTO.RemoteSessionCache}["$serverName"] = $session
+		${GLOBAL:Shin.Framework.RemoteSessionCache}["$serverName"] = $session
 	}
 
 	return $session

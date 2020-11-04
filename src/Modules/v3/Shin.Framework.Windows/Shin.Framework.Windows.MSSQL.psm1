@@ -1,5 +1,5 @@
 #
-# Deloitte.GTS.CTO.Windows.MSSQL.psm1
+# Shin.Framework.Windows.MSSQL.psm1
 #
 
 $assemblylist =   

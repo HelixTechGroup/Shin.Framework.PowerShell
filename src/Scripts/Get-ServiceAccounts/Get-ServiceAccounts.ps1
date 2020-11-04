@@ -1,7 +1,7 @@
-﻿#Requires -Version 3.0
+#Requires -Version 3.0
 
 Param(
-	[string]$pcsUsername,
+	[string]$SecretServerUsername,
 	[string]$domainUsername = [Environment]::UserName,
 	[string]$outputFile = "svc_accts.txt",
 	[string]$proxyUrl = $null,
@@ -13,11 +13,10 @@ Param(
 	[switch]$sqlUsers
 )
 
-Import-Module Deloitte.GTS.CTO.Common
-Import-Module Deloitte.GTS.CTO.Data
-Import-Module Deloitte.GTS.CTO.GLB
-Import-Module Deloitte.GTS.CTO.PCS
-Import-Module Deloitte.GTS.CTO.Windows
+Import-Module Shin.Framework.Common
+Import-Module Shin.Framework.Data
+Import-Module Shin.Framework.SecretServer
+Import-Module Shin.Framework.Windows
 
 . "$PSScriptRoot\functions.ps1"
 
@@ -35,11 +34,11 @@ if ((Test-Path $outFile)) {
 
 $domain = [System.DirectoryServices.ActiveDirectory.Domain]::GetComputerDomain().Name;
 $user = [Environment]::UserName;
-if ([string]::IsNullOrWhiteSpace($pcsUsername)) {
-	$pcsUsername = "$domain\$user";
+if ([string]::IsNullOrWhiteSpace($SecretServerUsername)) {
+	$SecretServerUsername = "$domain\$user";
 }
 
-[PSCredential]$creds = Get-ConsoleCredentials $pcsUsername
+[PSCredential]$creds = Get-ConsoleCredentials $SecretServerUsername
 
 try {
 	New-GlbApiInterface
@@ -49,17 +48,15 @@ try {
 }
 
 try {
-	New-PcsApiInterface $creds $proxyUrl
+	New-SecretServerApiInterface $creds $proxyUrl
 } catch {
-	Write-LogException "Could not initialize PCS Api interface" $_.Exception
+	Write-LogException "Could not initialize SecretServer Api interface" $_.Exception
 	return;
 }
 
 $domains = Import-CsvFile "$PSScriptRoot/domains.csv" @('Name')
 $templates = Import-CsvFile "$PSScriptRoot/templates.csv" @('Id', 'Name')
-#$appList = Import-CsvFile "$PSScriptRoot/applications.csv" @('Name')
-#$appList = @('DTT - App = Consulting - LDS AME');
-$appList = @{Name = 'DTT - App = Delivery Enablement - SonarQube'};
+$appList = @{Name = ''};
 $credList = @{};
 
 if ($allDomains) {
@@ -76,14 +73,14 @@ foreach ($app in $appList) {
 	$servers = @();
 	$appUsers = @();	
 
-	$glbInfo = Get-GlbInfo $app.Name
-	if (!$glbInfo) {
-		continue;
-	}
+	#$glbInfo = Get-GlbInfo $app.Name
+	#if (!$glbInfo) {
+	#	continue;
+	#}
 
-	$appId = $glbInfo.Id
-	$servers = $glbInfo.Servers
-	$appUsers = Get-PcsAppUsers $appId
+	#$appId = $glbInfo.Id
+	#$servers = $glbInfo.Servers
+	#$appUsers = Get-SecretServerAppUsers $appId
 
 	Write-LogDebug "APPLICATION NAME: $($app.Name)"			
 	Write-Output "$($app.Name) - $appId";

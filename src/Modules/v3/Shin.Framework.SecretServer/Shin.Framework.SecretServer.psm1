@@ -1,5 +1,5 @@
 #
-# Deloitte.GTS.CTO.PCS.psm1
+# Shin.Framework.SecretServer.psm1
 #
 
 #using namespace System.DirectoryServices.ActiveDirectory;
@@ -189,7 +189,7 @@ function isTokenValid() {
 
 function checkErrors($result) {
 	if ($result.Errors.Count -gt 0) {
-		throw (New-Object Exception "Pcs api call errors: $($result.Errors)");
+		throw (New-Object Exception "SecretServer api call errors: $($result.Errors)");
 	}
 }
 

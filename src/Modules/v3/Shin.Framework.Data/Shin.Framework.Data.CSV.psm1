@@ -1,5 +1,5 @@
 #
-# Deloitte.GTS.CTO.Data.Csv.psm1
+# Shin.Framework.Data.Csv.psm1
 #
 
 function Import-CsvFile([string]$csvFileName, [String[]]$headers) {

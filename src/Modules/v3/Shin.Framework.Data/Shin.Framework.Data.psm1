@@ -1,5 +1,5 @@
 #
-# Deloitte.GTS.CTO.Data.psm1
+# Shin.Framework.Data.psm1
 #
 
 function Select-DataTableColumns([System.Data.DataTable]$table, [string[]]$columns) {

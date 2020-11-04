@@ -1,5 +1,5 @@
 #
-# Deloitte.GTS.CTO.Windows.IIS.psm1
+# Shin.Framework.Windows.IIS.psm1
 #
 
 function Get-IISAllWebsites() {

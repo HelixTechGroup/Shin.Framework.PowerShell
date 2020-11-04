@@ -1,5 +1,5 @@
 ---
-external help file: Deloitte.GTS.CTO.Common-help.xml
+external help file: Shin.Framework.Common-help.xml
 online version: 
 schema: 2.0.0
 ---

@@ -21,7 +21,7 @@ GUID = 'f16418b1-a95c-4dfd-af8c-d4599e55f355'
 Author = 'Bryan M. Longacre'
 
 # Company or vendor of this module
-CompanyName = 'Deloitte'
+CompanyName = 'HelixTechGroup'
 
 # Copyright statement for this module
 Copyright = '(c) 2016 . All rights reserved.'

@@ -1,5 +1,5 @@
 #
-# Deloitte.GTS.CTO.Webservices.psm1
+# Shin.Framework.Webservices.psm1
 #
 
 function Get-WsdlWebserviceProxy([string]$wsdlUrl, [string]$proxyUrl, [switch]$useDefaultCredential) {
@@ -8,13 +8,13 @@ function Get-WsdlWebserviceProxy([string]$wsdlUrl, [string]$proxyUrl, [switch]$u
 	}
 
 	## Create the web service cache, if it doesn’t already exist
-	if(!(Test-Path Variable:\Deloitte.GTS.CTO.WebServiceCache)) {
-		${GLOBAL:Deloitte.GTS.CTO.WebServiceCache} = @{}
+	if(!(Test-Path Variable:\Shin.Framework.WebServiceCache)) {
+		${GLOBAL:Shin.Framework.WebServiceCache} = @{}
 	}
  
 	## Check if there was an instance from a previous connection to
 	## this web service. If so, return that instead.
-	$oldInstance = ${GLOBAL:Deloitte.GTS.CTO.WebServiceCache}[$wsdlUrl]
+	$oldInstance = ${GLOBAL:Shin.Framework.WebServiceCache}[$wsdlUrl]
 	if($oldInstance) {
 		return $oldInstance
 	}
@@ -112,7 +112,7 @@ function Get-WsdlWebserviceProxy([string]$wsdlUrl, [string]$proxyUrl, [switch]$u
 		}
 		$instance.UseDefaultCredentials = $useDefaultCredential;
 
-		${GLOBAL:Deloitte.GTS.CTO.WebServiceCache}[$wsdlUrl] = $instance
+		${GLOBAL:Shin.Framework.WebServiceCache}[$wsdlUrl] = $instance
 		return $instance
 	}
 }

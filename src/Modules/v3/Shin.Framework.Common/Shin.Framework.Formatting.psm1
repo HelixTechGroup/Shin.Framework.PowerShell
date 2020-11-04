@@ -1,5 +1,5 @@
 #
-# Deloitte.GTS.CTO.Formatting.psm1
+# Shin.Framework.Formatting.psm1
 #
 
 function ConvertTo-FileSizeFromBytes([float]$size) {

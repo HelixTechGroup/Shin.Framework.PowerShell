@@ -1,5 +1,5 @@
 #
-# Deloitte.GTS.CTO.Data.SQLite.psm1
+# Shin.Framework.Data.SQLite.psm1
 #
 
 function Open-SQLiteDatabase([string]$name, [string]$location, [switch]$force) {
